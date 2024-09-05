@@ -66,4 +66,5 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+
+export default dynamic(() => Promise.resolve(AboutUs), { ssr: false });

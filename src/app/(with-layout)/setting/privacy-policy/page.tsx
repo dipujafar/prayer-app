@@ -53,4 +53,4 @@ const PrivacyPolicy = () => {
     );
 };
 
-export default PrivacyPolicy;
+export default dynamic(() => Promise.resolve(PrivacyPolicy), { ssr: false });

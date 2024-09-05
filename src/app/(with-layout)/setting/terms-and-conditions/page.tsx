@@ -43,4 +43,4 @@ const TermsAndConditions = () => {
     );
 };
 
-export default TermsAndConditions;
+export default dynamic(() => Promise.resolve(TermsAndConditions), { ssr: false });
