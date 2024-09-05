@@ -27,7 +27,7 @@ const PrayerCard = () => {
         </div>
       </div>
       <h1 className="font-bold">Divine Beginnings for us…</h1>
-      <p className="font-medium text-whiteDarker">Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to read more.</p>
+      <p className="font-medium text-whiteDarker">Please pray about a situation where people on a certain place continuously harass people and make them believe God isn&apos;s with them. Please pray for the Holy Spirit to convict them and for God to read more.</p>
       <div className="flex gap-2">
         <Button onClick={()=>setEditModalOpen(true)} style={{backgroundColor: "#5A015E", color: "white"}} block>Edit</Button>
         <Button onClick={()=>setIsModalOpen(true)} danger block>Delete</Button>

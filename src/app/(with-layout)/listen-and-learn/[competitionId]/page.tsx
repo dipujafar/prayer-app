@@ -5,7 +5,7 @@ import UploadVideo from "@/components/(withLayout)/Listen&Learn/UploadVideo";
 import { Pagination } from "antd";
 import { useState } from "react";
 
-const page = ({ params }: any) => {
+const VideoPage = ({ params }: any) => {
     console.log(params);
 
     const data = [
@@ -94,4 +94,4 @@ const page = ({ params }: any) => {
     );
 };
 
-export default page;
+export default VideoPage;

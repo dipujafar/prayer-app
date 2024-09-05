@@ -36,7 +36,7 @@ const PrayerContainer = () => {
       {/* Prayer cards */}
       <div className="grid grid-cols-3 gap-4">
         {
-            currentPrayerData?.map(prayer=><PrayerCard></PrayerCard>)
+            currentPrayerData?.map((prayer, inx)=><PrayerCard key={inx}></PrayerCard>)
         }
       </div>
       <div className="w-max mt-5 ml-auto">
