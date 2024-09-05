@@ -3,7 +3,6 @@
 import CategoryTable from "@/components/(withLayout)/Setting/Category/CategoryTable";
 import UploadCategory from "@/components/(withLayout)/Setting/Category/UploadCategory";
 import { SearchOutlined } from "@ant-design/icons";
-import { Pagination } from "antd";
 import { useState } from "react";
 
 const Category = () => {

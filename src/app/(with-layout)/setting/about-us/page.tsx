@@ -1,9 +1,12 @@
 "use client";
 import { Button, ConfigProvider } from "antd";
 import { useState } from "react";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css";
 import "./quill.css";
+
+// Dynamically import ReactQuill with SSR disabled
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const AboutUs = () => {
   const [value, setValue] = useState("");
