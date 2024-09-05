@@ -1,10 +1,20 @@
-"use client"
+"use client";
 import { ConfigProvider, Table } from "antd";
 import { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import EarningModal from "./EarningModal";
+import type { ColumnsType } from "antd/es/table"; // Importing ColumnsType from Antd to specify types for columns.
 
-const dataSource = [
+interface DataType {
+    key: string;
+    serial: string;
+    name: string;
+    accountNumber: string;
+    date: string;
+    amount: number;
+}
+
+const dataSource: DataType[] = [
     {
         key: '1',
         serial: '1',
@@ -96,10 +106,8 @@ const dataSource = [
 
 ];
 
-
 const EarningTable = () => {
-
-    // Modal
+    // Modal state
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -114,54 +122,54 @@ const EarningTable = () => {
         setIsModalOpen(false);
     };
 
-
-
-    const columns = [
+    // Define columns with correct typing
+    const columns: ColumnsType<DataType> = [
         {
-            title: 'Serial',
-            dataIndex: 'serial',
-            key: 'serial',
-            align: 'center',
+            title: "Serial",
+            dataIndex: "serial",
+            key: "serial",
+            align: "center",
         },
         {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
-            align: 'center',
+            title: "Name",
+            dataIndex: "name",
+            key: "name",
+            align: "center",
         },
         {
-            title: 'Account Number',
-            dataIndex: 'accountNumber',
-            key: 'accountNumber',
-            align: 'center',
+            title: "Account Number",
+            dataIndex: "accountNumber",
+            key: "accountNumber",
+            align: "center",
         },
         {
-            title: 'Date',
-            dataIndex: 'date',
-            key: 'date',
-            align: 'center',
+            title: "Date",
+            dataIndex: "date",
+            key: "date",
+            align: "center",
         },
         {
-            title: 'Amount',
-            dataIndex: 'amount',
-            key: 'amount',
-            align: 'center',
+            title: "Amount",
+            dataIndex: "amount",
+            key: "amount",
+            align: "center",
         },
         {
-            title: 'Action',
-            dataIndex: 'action',
-            key: 'action',
-            align: 'center',
-            render: () => <IoEyeOutline onClick={showModal} className="mx-auto w-6 h-6 cursor-pointer" />,
+            title: "Action",
+            key: "action",
+            align: "center",
+            render: () => (
+                <IoEyeOutline
+                    onClick={showModal}
+                    className="mx-auto w-6 h-6 cursor-pointer"
+                />
+            ),
         },
     ];
-
-
 
     return (
         <>
             <div className="bg-[#FDFDFD] rounded-md ">
-
                 <ConfigProvider
                     theme={{
                         components: {
@@ -179,16 +187,17 @@ const EarningTable = () => {
                     }}
                 >
                     <Table
-                        className="h-auto mt-6 table-menu-custom-earning "
-                        align="center"
+                        className="h-auto mt-6 table-menu-custom-earning"
                         dataSource={dataSource}
                         columns={columns}
                     />
                 </ConfigProvider>
-                <EarningModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel}></EarningModal>
-
+                <EarningModal
+                    isModalOpen={isModalOpen}
+                    handleOk={handleOk}
+                    handleCancel={handleCancel}
+                />
             </div>
-
         </>
     );
 };
