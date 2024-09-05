@@ -34,6 +34,20 @@ const SingleEventTable = () => {
             customerName: 'Emon',
             Amount: 150,
         },
+        {
+            key: '5',
+            orderId: '5',
+            Date: '11 Oct 2024',
+            customerName: 'Emon',
+            Amount: 150,
+        },
+        {
+            key: '6',
+            orderId: '6',
+            Date: '11 Oct 2024',
+            customerName: 'Emon',
+            Amount: 150,
+        },
         
     ];
 
@@ -42,27 +56,28 @@ const SingleEventTable = () => {
             title: 'Order Id',
             dataIndex: 'orderId',
             key: 'orderId',
-            align: 'center',
+            align: 'center' as const,  // Fixing the align type
         },
         {
             title: 'Date',
             dataIndex: 'Date',
             key: 'Date',
-            align: 'center',
+            align: 'center' as const,  // Fixing the align type
         },
         {
             title: 'Customer Name',
             dataIndex: 'customerName',
             key: 'customerName',
-            align: 'center',
+            align: 'center' as const,  // Fixing the align type
         },
         {
             title: 'Amount',
             dataIndex: 'Amount',
             key: 'Amount',
-            align: 'center',
+            align: 'center' as const,  // Fixing the align type
         },
     ];
+    
 
 
     // pagination
@@ -96,8 +111,8 @@ const SingleEventTable = () => {
                 >
                     <Table
                         className="px-6 h-auto event-custom-pagination"
-                        align="center"
                         dataSource={dataSource}
+                        pagination={{pageSize: 5}}
                         columns={columns}
                     />
                 </ConfigProvider>
