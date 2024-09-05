@@ -129,7 +129,6 @@ const EducationalResources = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
-        console.log(`Current page: ${page}`);
     };
 
     return (
