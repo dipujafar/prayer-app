@@ -100,6 +100,7 @@ const CategoryTable = () => {
                         className="px-4 overflow-auto h-[65vh] "
                         align="center"
                         dataSource={dataSource}
+                        // @ts-ignore
                         columns={columns}
                         pagination={{pageSize: 8}}
                     />
