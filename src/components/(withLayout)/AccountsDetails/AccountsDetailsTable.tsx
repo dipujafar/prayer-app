@@ -6,10 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import BlockAccoutModal from "./BlockAccoutModal";
 
-
-
 const AccountsDetailsTable = () => {
-
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -54,11 +51,13 @@ const AccountsDetailsTable = () => {
             dataIndex: 'action',
             key: 'action',
             align: 'center',
-            // render: (_: any, record:any) => <Link href={`/details/${record.key}`}>Details</Link>
-            render: (_: any, record: any) => <ConfigProvider wave={{ disabled: true }}> <Button style={{ background: "transparent", border: "none" }} onClick={showModal}>
-                <Image className="mx-auto" src={disable} alt="disable" width={40} height={40} />
-            </Button>
-            </ConfigProvider>
+            render: (_: any, record: any) => (
+                <ConfigProvider wave={{ disabled: true }}>
+                    <Button style={{ background: "transparent", border: "none" }} onClick={showModal}>
+                        <Image className="mx-auto" src={disable} alt="disable" width={40} height={40} />
+                    </Button>
+                </ConfigProvider>
+            ),
         },
     ];
 
@@ -81,17 +80,17 @@ const AccountsDetailsTable = () => {
                     }}
                 >
                     <Table
-                        align="center"
                         className="table-menu-custom"
                         dataSource={dataSource}
                         columns={columns}
+                        pagination={{ pageSize: 10 }}
                     />
-
                 </ConfigProvider>
-                <BlockAccoutModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel}></BlockAccoutModal>
+                <BlockAccoutModal isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
             </div>
         </>
     );
 };
 
 export default AccountsDetailsTable;
+
