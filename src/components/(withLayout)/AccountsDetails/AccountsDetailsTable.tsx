@@ -69,7 +69,7 @@ const AccountsDetailsTable = () => {
             okText="delete"
             cancelText="No"
           >
-            <FaRegTrashCan color="red" size={24} />
+            <FaRegTrashCan color="red" size={24} className="cursor-pointer" />
           </Popconfirm>
 
           <Button

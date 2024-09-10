@@ -49,8 +49,8 @@ const SingleVideoCart = ({ data }: any) => {
           okText="delete"
           cancelText="No"
         >
-          <div className="bg-white p-3 rounded-full">
-            <FaRegTrashCan color="#000" size={20} />
+          <div className="bg-white p-3 rounded-full cursor-pointer">
+            <FaRegTrashCan color="#E23A51" size={20} />
           </div>
         </Popconfirm>
       </div>

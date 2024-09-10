@@ -1,56 +1,38 @@
-"use client"
-import { Button, ConfigProvider } from 'antd';
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import 'react-quill/dist/quill.snow.css';
-import './quill.css';
+"use client";
+import { Button, ConfigProvider } from "antd";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css";
+import "./quill.css";
 
 // Dynamically import ReactQuill with no SSR
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const PrivacyPolicy = () => {
-    const [value, setValue] = useState('');
-    const handleEditorText = () => {
-        console.log(value);
-    };
+  const [value, setValue] = useState("");
+  const handleEditorText = () => {
+    console.log(value);
+  };
 
-    return (
-        <div>
-            <h1 className=' text-2xl font-bold mb-6 text-white'>Privacy Policy</h1>
+  return (
+    <div>
+      <h1 className=" text-2xl font-bold mb-6 text-white">Privacy Policy</h1>
 
-            {/* Ensure ReactQuill only renders on the client */}
-            <ReactQuill 
-                className='bg-white min-h-[600px] border-none rounded-md' 
-                theme="snow" 
-                value={value} 
-                onChange={setValue} 
-                placeholder='Start writing......' 
-            />
-
-            <ConfigProvider
-                theme={{
-                    components: {
-                        Button: {
-                            defaultHoverBg: "#F0BE1B",
-                            defaultHoverBorderColor: "#F0BE1B",
-                            defaultActiveBg: "#F0BE1B",
-                            defaultHoverColor: "white",
-                            colorBgTextActive: "white",
-                            colorPrimaryActive: "white",
-                        },
-                    },
-                }}
-            >
-                <Button 
-                    onClick={handleEditorText} 
-                    className='bg-secondary text-white py-6 text-lg border-none hover:bg-secondary hover:text-white' 
-                    block
-                >
-                    Save Changes
-                </Button>
-            </ConfigProvider>
-        </div>
-    );
+      {/* Ensure ReactQuill only renders on the client */}
+      <ReactQuill
+        className="bg-white min-h-[600px] border-none rounded-md"
+        theme="snow"
+        value={value}
+        onChange={setValue}
+        placeholder="Start writing......"
+      />
+      <div className="mt-10">
+        <Button onClick={handleEditorText} size="large" block>
+          Save Changes
+        </Button>
+      </div>
+    </div>
+  );
 };
 
 export default dynamic(() => Promise.resolve(PrivacyPolicy), { ssr: false });

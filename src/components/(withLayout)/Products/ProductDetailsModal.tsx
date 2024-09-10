@@ -1,10 +1,10 @@
 "use client";
 import { Divider, message, Modal, Popconfirm, PopconfirmProps } from "antd";
-import Image from "next/image";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FiEdit } from "react-icons/fi";
 import ProductEditModal from "./ProductEditModal";
 import { useState } from "react";
+import Image from "next/image";
 
 type TPropsType = {
   open: boolean;
@@ -38,7 +38,9 @@ const ProductDetailsModal = ({ open, setOpen, data }: TPropsType) => {
             <Image
               src={data?.image}
               alt="image"
-              style={{ width: "100%", height: "200px" }}
+              width={1900}
+              height={1000}
+              className="w-full h-44 object-fill"
             />
             <div className="mt-10">
               <div className="flex justify-between">
@@ -89,7 +91,7 @@ const ProductDetailsModal = ({ open, setOpen, data }: TPropsType) => {
               okText="delete"
               cancelText="No"
             >
-              <div className="bg-[#e23a51] p-3 rounded-full">
+              <div className="bg-[#e23a51] p-3 rounded-full cursor-pointer">
                 <FaRegTrashCan color="white" size={20} />
               </div>
             </Popconfirm>

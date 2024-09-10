@@ -38,33 +38,13 @@ const AboutUs = () => {
         placeholder="Start writing ......"
         onChange={setValue}
       />
-      ;
-      <ConfigProvider
-        theme={{
-          components: {
-            Button: {
-              defaultHoverBg: "#F0BE1B",
-              defaultHoverBorderColor: "#F0BE1B",
-              defaultActiveBg: "#F0BE1B",
-              defaultHoverColor: "white",
-              colorBgTextActive: "white",
-              colorPrimaryActive: "white",
-            },
-          },
-        }}
-      >
-        <Button
-          onClick={handleEditorText}
-          className=" bg-secondary text-white py-6 text-lg border-none hover:bg-secondary hover:text-white"
-          block
-        >
+      <div className="mt-5">
+        <Button onClick={handleEditorText} size="large" block>
           Save Changes
         </Button>
-      </ConfigProvider>
-      <div></div>
+      </div>
     </div>
   );
 };
-
 
 export default dynamic(() => Promise.resolve(AboutUs), { ssr: false });

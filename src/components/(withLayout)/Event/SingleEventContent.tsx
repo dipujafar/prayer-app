@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import image from "../../../assets/event/event.jpg";
 import { SlLocationPin } from "react-icons/sl";
@@ -10,38 +10,18 @@ import { useRouter } from "next/navigation";
 import EventEditModal from "./EventEditModal";
 import { useState } from "react";
 
-
-
 const SingleEventContent = () => {
-    const [open, setOpen] = useState(false);
-    const route = useRouter();
+  const [open, setOpen] = useState(false);
+  const route = useRouter();
 
-    const confirm: PopconfirmProps["onConfirm"] = (e) => {
-        console.log(e);
-        message.success("successfully delete");
-        route.push("/event")
-      };
+  const confirm: PopconfirmProps["onConfirm"] = (e) => {
+    console.log(e);
+    message.success("successfully delete");
+    route.push("/event");
+  };
 
   return (
     <div>
-        {/* delete and edit */}
-        <div className="flex items-center justify-center gap-2 mb-3">
-            <button onClick={()=>setOpen(!open)} className="bg-[#ffffff] p-3 rounded-full">
-              <FiEdit color="black" size={20} />
-            </button>
-
-            <Popconfirm
-              title="Delete the Event"
-              description="Are you sure to delete this event?"
-              onConfirm={confirm}
-              okText="delete"
-              cancelText="No"
-            >
-              <div className="bg-[#e23a51] p-3 rounded-full">
-                <FaRegTrashCan color="white" size={20} />
-              </div>
-            </Popconfirm>
-          </div>
       <div className="w-full h-[250px] relative overflow-hidden rounded-md">
         <Image
           className="absolute inset-0 w-full h-full object-cover object-center"
@@ -60,18 +40,39 @@ const SingleEventContent = () => {
             <p className="text-base">1012 Avenue, New York, USA</p>
           </div>
         </div>
+        <div>
+          {" "}
+          {/* delete and edit */}
+          <div className="flex items-center justify-end gap-2 mb-3">
+            <button
+              onClick={() => setOpen(!open)}
+              className="bg-[#ffffff] p-3 rounded-full"
+            >
+              <FiEdit color="black" size={20} />
+            </button>
 
-        <div className="text-white flex gap-3 items-center">
-          <RxClock className="w-6 h-6" />
-          <p className="flex items-center gap-1">7/27/2024</p>
-          <p className="text-base">12:00pm-7:30pm</p>
+            <Popconfirm
+              title="Delete the Event"
+              description="Are you sure to delete this event?"
+              onConfirm={confirm}
+              okText="delete"
+              cancelText="No"
+            >
+              <div className="bg-[#e23a51] p-3 rounded-full cursor-pointer">
+                <FaRegTrashCan color="white" size={20} />
+              </div>
+            </Popconfirm>
+          </div>
+          <div className="text-white flex gap-3 items-center">
+            <RxClock className="w-6 h-6" />
+            <p className="flex items-center gap-1">7/27/2024</p>
+            <p className="text-base">12:00pm-7:30pm</p>
+          </div>
         </div>
       </div>
       <div>
         <div className="flex justify-between">
           <h2 className="text-4xl text-secondary font-bold mb-3">About</h2>
-
-          
         </div>
         <p className="text-white text-base">
           This Thursday, our Bible Study group will be gathering for an
@@ -86,7 +87,7 @@ const SingleEventContent = () => {
           God&apos;s Word.
         </p>
       </div>
-      <EventEditModal  open={open} setOpen={setOpen}></EventEditModal>
+      <EventEditModal open={open} setOpen={setOpen}></EventEditModal>
     </div>
   );
 };
