@@ -138,12 +138,7 @@ const PrayerEditModal = ({
 
             <Button
               htmlType="submit"
-              style={{
-                width: "100%",
-                height: "48px",
-                backgroundColor: "#5A015E",
-                color: "#fff",
-              }}
+             block
               size="large"
             >
               Upload

@@ -4,6 +4,7 @@ import { Poppins, Urbanist } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
 import antTheme from "@/theme/antTheme";
+import { Toaster } from "sonner";
 
 // custom font
 const poppins = Poppins({
@@ -39,6 +40,7 @@ export default function RootLayout({
         <AntdRegistry>
           <ConfigProvider theme={antTheme}>
           {children}
+          <Toaster />
           </ConfigProvider>
           </AntdRegistry>
           

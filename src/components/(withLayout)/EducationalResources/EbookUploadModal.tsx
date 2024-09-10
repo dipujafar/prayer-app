@@ -23,6 +23,8 @@ const EbookUploadModal = ({ isModalOpen, handleOk, handleCancel }: any) => {
 
     const onFinish = (values: any) => {
         console.log('Success:', values);
+        handleCancel()
+
     };
 
     return (
@@ -123,7 +125,7 @@ const EbookUploadModal = ({ isModalOpen, handleOk, handleCancel }: any) => {
                             },
                         }}
                     >
-                        <Button block className=" bg-primary text-white text-xl py-8 border-none hover:bg-primary" htmlType="submit">
+                        <Button block  htmlType="submit" size="large">
                             Upload
                         </Button>
                     </ConfigProvider>

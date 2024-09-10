@@ -7,106 +7,17 @@ import EventCart from "@/components/(withLayout)/Event/EventCart";
 
 const Event = () => {
     
-    const data = [
-        {
+    const data = Array.from({length: 27}).map((data,indx)=>(
+            {
             _id: 1,
             image: event,
             name: 'Thursday Bible Study',
             date: '7/27/2024',
             time: '12:00pm-7:30pm'
-        },
-        {
-            _id: 2,
-            image: event,
-            name: 'Community Potluck Dinner',
-            date: '8/3/2024',
-            time: '6:00pm-9:00pm'
-        },
-        {
-            _id: 3,
-            image: event,
-            name: 'Yoga and Meditation Class',
-            date: '8/10/2024',
-            time: '9:00am-10:30am'
-        },
-        {
-            _id: 4,
-            image: event,
-            name: 'Local Art Exhibition',
-            date: '8/15/2024',
-            time: '1:00pm-5:00pm'
-        },
-        {
-            _id: 5,
-            image: event,
-            name: 'Charity Run for Health',
-            date: '8/22/2024',
-            time: '7:00am-11:00am'
-        },
-        {
-            _id: 6,
-            image: event,
-            name: 'Weekend Book Club',
-            date: '8/29/2024',
-            time: '2:00pm-4:00pm'
-        },
-        {
-            _id: 7,
-            image: event,
-            name: 'Summer Music Festival',
-            date: '9/5/2024',
-            time: '4:00pm-10:00pm'
-        },
-        {
-            _id: 8,
-            image: event,
-            name: 'Tech Innovations Seminar',
-            date: '9/12/2024',
-            time: '10:00am-3:00pm'
-        },
-        {
-            _id: 9,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-        {
-            _id: 10,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-        {
-            _id: 11,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-        {
-            _id: 12,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-        {
-            _id: 13,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-        {
-            _id: 14,
-            image: event,
-            name: 'Farmers Market Fair',
-            date: '9/19/2024',
-            time: '8:00am-2:00pm'
-        },
-    ];
+        }
+    ))
+    
+    
 
 
     const [currentPage, setCurrentPage] = useState<number>(1);

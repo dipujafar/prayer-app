@@ -14,8 +14,6 @@ import {
 } from "antd";
 import TextArea from "antd/es/input/TextArea";
 
-
-
 const PrayerUploadModal = ({
   state: modalOpen,
   setState: setModalOpen,
@@ -25,6 +23,7 @@ const PrayerUploadModal = ({
   //@ts-ignore
   const handleSubmit = (values) => {
     console.log("form values", values);
+    setModalOpen(false);
   };
 
   return (
@@ -86,7 +85,7 @@ const PrayerUploadModal = ({
                 listType="picture"
                 beforeUpload={() => false}
               >
-                <Button icon={<UploadOutlined />} style={{ color: "#5A015E" }}>
+                <Button icon={<UploadOutlined />} >
                   Upload Cover Image
                 </Button>
               </Upload>
@@ -145,16 +144,7 @@ const PrayerUploadModal = ({
               <TextArea rows={5} placeholder="Type here..."></TextArea>
             </Form.Item>
 
-            <Button
-              htmlType="submit"
-              style={{
-                width: "100%",
-                height: "48px",
-                backgroundColor: "#5A015E",
-                color: "#fff",
-              }}
-              size="large"
-            >
+            <Button htmlType="submit" block size="large">
               Upload
             </Button>
           </Form>

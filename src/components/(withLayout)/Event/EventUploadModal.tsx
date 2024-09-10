@@ -49,15 +49,6 @@ const EventUploadModal = ({ isModalOpen, handleOk, handleCancel }: any) => {
             onOk={handleOk}
             onCancel={handleCancel}
         >
-            {/* <Typography.Title
-                style={{ color: "#5A015E" }}
-                level={2}
-                className="mb-3"
-            >
-                E-Book Upload
-            </Typography.Title> */}
-
-            {/* Form */}
             <Form
                 name="eventCoverImg"
                 labelCol={{ span: 24 }}
@@ -165,23 +156,10 @@ const EventUploadModal = ({ isModalOpen, handleOk, handleCancel }: any) => {
                 <Form.Item
                     className="mt-6"
                 >
-                    <ConfigProvider
-                        theme={{
-                            components: {
-                                Button: {
-                                    defaultHoverBg: "#5A015E",
-                                    defaultHoverColor: "white",
-                                    defaultActiveBg: "#5A015E",
-                                    defaultActiveColor: "white",
-                                },
-                            },
-                        }}
-                    >
-                        <Button block className=" bg-primary text-white text-xl py-8 border-none hover:bg-primary" htmlType="submit">
+                   
+                        <Button block size="large" htmlType="submit">
                             Upload
                         </Button>
-                    </ConfigProvider>
-
                 </Form.Item>
             </Form>
         </Modal>

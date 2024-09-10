@@ -57,17 +57,6 @@ export default function DashBoardLayout({
               Layout: {
                 headerPadding: "0 0px",
               },
-
-              Pagination: {
-                // colorPrimary: "black",
-                // colorBorder: "black",
-                // itemBg: "white",
-                // itemActiveBg: "white",
-                // colorBgTextActive: "white",
-                // colorBgTextHover: "white",
-                // colorPrimaryHover: "black",
-                // colorPrimaryBorder: "black",
-              },
             },
           }}
         >

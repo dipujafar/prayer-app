@@ -11,7 +11,6 @@ import {
   import { FiUpload } from "react-icons/fi";
   import { Form, Input } from "antd";
   import TextArea from "antd/es/input/TextArea";
-  import "./ProductUploadModal.css";
   
   const ProductUploadModal = ({ isModalOpen, handleOk, handleCancel }: any) => {
     const props: UploadProps = {

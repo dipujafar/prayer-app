@@ -1,7 +1,11 @@
 import { Modal } from "antd";
 import React from "react";
+import { toast } from "sonner";
 
 const DeletePrayer = ({ isModalOpen, handleOk, handleCancel }: any) => {
+  const handleDelete = ()=>{
+    toast.success("Successfully Delete this prayer watch", {duration: 1000})
+  }
   return (
     <Modal
       footer={null}
@@ -27,8 +31,8 @@ const DeletePrayer = ({ isModalOpen, handleOk, handleCancel }: any) => {
           Cancel
         </button>
         <button
-          onClick={handleOk}
-          className=" text-base px-[34px] py-[10px] rounded-md bg-[#1D242D] text-white"
+          onClick={handleDelete}
+          className=" text-base px-[34px] py-[10px] rounded-md bg-[#CD0335] text-white"
         >
          Delete
         </button>

@@ -182,5 +182,8 @@ tbody.ant-table-tbody tr td {
     background-color: red;
 }
 
+.ant-popconfirm-buttons > .ant-btn-primary:hover {
+    background-color: #5A015E;
+}
 
 

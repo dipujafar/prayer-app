@@ -5,7 +5,7 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 import { FaRegTrashCan } from "react-icons/fa6";
 import PopUpVideo from "./PopUpVideo";
 import type { PopconfirmProps } from "antd";
-import { Button, ConfigProvider, message, Popconfirm } from "antd";
+import {  message, Popconfirm } from "antd";
 
 const SingleVideoCart = ({ data }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
