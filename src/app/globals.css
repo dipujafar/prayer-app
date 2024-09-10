@@ -133,23 +133,13 @@ span.anticon.anticon-right {
     color: #fff;
  }
 
- /* .ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child::before{
-    content:"";
-    background-color: #5A015E !important; 
- } */
- /* .ant-menu-title-content{
-    width: 100% !important;
-    height: 100% !important;
-    background-color: #5A015E !important;
- } */
+
  .ant-menu.ant-menu-sub li{ 
     height:     100%;
     width: 100%;
     color:#5A015E !important;
     border: 1px solid #5A015E !important;
     z-index: 1  !important; 
-
-
  }
  .ant-menu.ant-menu-sub li::after{
     background-color: #5A015E !important;
@@ -186,6 +176,10 @@ tbody.ant-table-tbody tr td {
 
 :where(.css-dev-only-do-not-override-1ndju6b).ant-notification .ant-notification-notice-wrapper .ant-notification-notice-icon-info.anticon {
     color: #5A015E;
+}
+
+.ant-popconfirm-buttons > .ant-btn-primary{
+    background-color: red;
 }
 
 

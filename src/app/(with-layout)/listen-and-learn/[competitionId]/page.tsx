@@ -55,7 +55,6 @@ const VideoPage = ({ params }: any) => {
 
 
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const totalItems = 50;
     const pageSize = 5;
 
     const startData =  (currentPage - 1) * pageSize;

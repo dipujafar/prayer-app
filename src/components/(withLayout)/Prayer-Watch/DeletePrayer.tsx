@@ -30,7 +30,7 @@ const DeletePrayer = ({ isModalOpen, handleOk, handleCancel }: any) => {
           onClick={handleOk}
           className=" text-base px-[34px] py-[10px] rounded-md bg-[#1D242D] text-white"
         >
-          Done
+         Delete
         </button>
       </div>
     </Modal>

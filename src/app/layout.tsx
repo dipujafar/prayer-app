@@ -1,26 +1,24 @@
-// "use client";
 import type { Metadata } from "next";
 import "./globals.css";
+import { Poppins, Urbanist } from "next/font/google";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
-// import { StyleProvider } from "@ant-design/cssinjs";
-import{Poppins,Urbanist} from "next/font/google"
+import antTheme from "@/theme/antTheme";
 
-
-// custom font 
-const poppins = Poppins({ 
+// custom font
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500","700"],
+  weight: ["400", "500", "700"],
   variable: "--font-poppins",
-  display: "swap"
+  display: "swap",
 });
 
 const urbanist = Urbanist({
   subsets: ["latin"],
-  weight: ["400","500","600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-urbanist",
-  display: "swap"
-})
-
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Prayer App",
@@ -33,22 +31,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <StyleProvider hashPriority="high">
     <html lang="en">
-      {/* <ConfigProvider
-        theme={{
-          components: {
-            Input: {
-              hoverBorderColor: "#5A015E",
-              activeBorderColor: "#5A015E",
-            },
-
-          },
-        }}
-      > */}
-        <body style={{ backgroundColor: "white"}} className={`${poppins.className} ${urbanist.variable}`} >{children}</body>
-      {/* </ConfigProvider> */}
+      <body
+        style={{ backgroundColor: "white" }}
+        className={`${poppins.className} ${urbanist.variable}`}
+      >
+        <AntdRegistry>
+          <ConfigProvider theme={antTheme}>
+          {children}
+          </ConfigProvider>
+          </AntdRegistry>
+          
+      </body>
     </html>
-    // </StyleProvider>
   );
 }
