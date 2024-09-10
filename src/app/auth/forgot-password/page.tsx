@@ -1,25 +1,16 @@
-import ForgotPasswordForm from '@/components/auth/ForgotPassword/ForgotPasswordForm';
-import loginImg from '../../../assets/login/login-image.png'
+import ForgotPasswordForm from "@/components/auth/ForgotPassword/ForgotPasswordForm";
+
 
 const ForgotPassword = () => {
-    const imageStyle = {
-        backgroundImage: `URL(${loginImg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-    };
-
-
-    return (
-        <div style={imageStyle}>
-            <div className='w-full h-full bg-[#59015efa]'>
-                <div className=' h-full flex items-center justify-center'>
-                    <ForgotPasswordForm></ForgotPasswordForm>
-                </div>
-
-            </div>
+  return (
+    <div>
+      <div className="min-h-[100vh] flex justify-center items-center bg-[#59015efa]">
+      <div className="bg-[#623B81] px-12 py-24 rounded-2xl border-2 border-[#400c42]">
+          <ForgotPasswordForm></ForgotPasswordForm>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ForgotPassword;

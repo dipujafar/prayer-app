@@ -1,28 +1,13 @@
-import SetNewPasswordForm from '@/components/auth/SetNewPassword/SetNewPasswordForm';
-import loginImg from '../../../assets/login/login-image.png';
-
+import SetNewPasswordForm from "@/components/auth/SetNewPassword/SetNewPasswordForm";
 
 const SetNewPassword = () => {
-
-    const imageStyle = {
-        backgroundImage: `URL(${loginImg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-    };
-
-
-
-    return (
-        <div style={imageStyle}>
-            <div className='w-full h-full bg-[#59015efa]'>
-                <div className=' h-full flex items-center justify-center'>
-                    <SetNewPasswordForm></SetNewPasswordForm>
-                </div>
-
-            </div>
-        </div>
-    );
+  return (
+    <div className="min-h-[100vh] bg-[#59015efa] flex items-center justify-center">
+      <div className="bg-[#623B81] px-12 py-14 rounded-2xl border-2 border-[#400c42]">
+        <SetNewPasswordForm></SetNewPasswordForm>
+      </div>
+    </div>
+  );
 };
 
 export default SetNewPassword;
